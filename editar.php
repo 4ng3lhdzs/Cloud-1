@@ -1,5 +1,6 @@
 <?php
-require_once 'includes/conexion.php';
+require_once 'includes/sesion.php';
+requiereLogin();
 require_once 'includes/validar.php';
 
 $pdo = conectar();
@@ -18,6 +19,7 @@ if (!$contacto) {
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    verificarCsrf();
     [$contacto, $errores] = leerFormulario();
 
     if (!$errores) {

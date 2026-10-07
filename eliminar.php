@@ -1,8 +1,10 @@
 <?php
-require_once 'includes/conexion.php';
+require_once 'includes/sesion.php';
+requiereLogin();
 
 // Solo se permite eliminar mediante POST (desde el botón de la lista)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    verificarCsrf();
     $id = (int) ($_POST['id'] ?? 0);
 
     $pdo  = conectar();

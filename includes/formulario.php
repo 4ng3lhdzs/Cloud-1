@@ -13,6 +13,7 @@
 <?php endif; ?>
 
 <form method="post" class="formulario">
+    <?= campoCsrf() ?>
     <label>Nombre *
         <input type="text" name="nombre" maxlength="50" required value="<?= e($contacto['nombre']) ?>">
     </label>

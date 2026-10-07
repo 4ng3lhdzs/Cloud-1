@@ -1,5 +1,6 @@
 <?php
-require_once 'includes/conexion.php';
+require_once 'includes/sesion.php';
+requiereLogin();
 
 $pdo = conectar();
 $buscar = trim($_GET['buscar'] ?? '');
@@ -66,6 +67,7 @@ require 'includes/header.php';
                         <a href="editar.php?id=<?= $c['id'] ?>" class="btn pequeno">Editar</a>
                         <form method="post" action="eliminar.php"
                               onsubmit="return confirm('¿Desea eliminar este contacto?');">
+                            <?= campoCsrf() ?>
                             <input type="hidden" name="id" value="<?= $c['id'] ?>">
                             <button type="submit" class="btn pequeno peligro">Eliminar</button>
                         </form>

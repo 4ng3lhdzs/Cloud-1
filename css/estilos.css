@@ -88,3 +88,15 @@ td.acciones form { margin: 0; }
     tr { border: 1px solid #e1e4e8; margin-bottom: 10px; border-radius: 4px; }
     td { border: none; }
 }
+
+/* Encabezado con usuario */
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+header .usuario { display: flex; align-items: center; gap: 10px; color: #fff; }
+header .usuario form { margin: 0; }
+
+/* Login */
+.login { max-width: 380px; margin: 20px auto; }
+.login h2 { margin-top: 0; }
+
+/* Instancia que atendió la petición */
+.servidor { font-size: .85em; color: #999; }

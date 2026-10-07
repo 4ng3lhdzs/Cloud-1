@@ -1,3 +1,4 @@
+<?php $usuarioHeader = function_exists('usuarioActual') ? usuarioActual() : null; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,5 +10,14 @@
 <body>
 <header>
     <h1><a href="index.php">📒 Agenda Telefónica</a></h1>
+    <?php if ($usuarioHeader): ?>
+        <div class="usuario">
+            <span>👤 <?= e($usuarioHeader['nombre'] ?: $usuarioHeader['usuario']) ?></span>
+            <form method="post" action="logout.php">
+                <?= campoCsrf() ?>
+                <button type="submit" class="btn pequeno secundario">Salir</button>
+            </form>
+        </div>
+    <?php endif; ?>
 </header>
 <main>
